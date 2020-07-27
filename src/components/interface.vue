@@ -52,10 +52,10 @@
                 this.$socket.emit('preset', preset);
             },
             go: function () {
-                this.$socket.emit('move forward');
+                this.$socket.emit('move', 'forward');
             },
             stop: function () {
-                this.$socket.emit('stop moving');
+                this.$socket.emit('move', 'stop');
             }
         },
         sockets: {
