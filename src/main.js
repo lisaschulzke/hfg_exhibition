@@ -10,7 +10,7 @@ Vue.config.productionTip = false
 
 Vue.use(new VueSocketIO({
   debug: true,
-  connection: 'https://hal.hfg.design:10000/lisabot_${MAC}_control', //WICHTIG: Hier nach dem Slash den Namen eures Bots angeben (wie auf dem Pi festgelegt)
+  connection: 'https://hal.hfg.design:10000/lisabot_control', //WICHTIG: Hier nach dem Slash den Namen eures Bots angeben (wie auf dem Pi festgelegt)
   options: {
     useConnectionNamespace: true
   }
