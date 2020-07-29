@@ -1,5 +1,5 @@
 <template>
-<Layout>
+
   <div>
     <b-button v-b-toggle.sidebar-1> <span class="glyphicon glyphicon-menu-burger" aria-hidden="true">menu</span>
     </b-button>
@@ -12,7 +12,7 @@
           <ul> <a href="#4">fourth</a> </ul>
         </div>
         <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+          Cras hallo mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
           in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
         </p>
         <b-img src="https://picsum.photos/500/500/?image=54" fluid thumbnail></b-img>
@@ -35,13 +35,13 @@
       </div>
     </div>
   </div>
-</Layout>
+
 
 </template>
 
 <script>
   import SimpleQueue from "./SimpleQueueComponent";
-  import Layout from './submodules/base_layout/src/components/interface.vue';
+  //import Layout from './submodules/base_layout/src/components/interface.vue';
 
     export default {
         components: {
