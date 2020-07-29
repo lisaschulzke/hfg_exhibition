@@ -1,37 +1,47 @@
 <template>
 
   <div>
-    <b-button v-b-toggle.sidebar-1> <span class="glyphicon glyphicon-menu-burger" aria-hidden="true">menu</span>
+    <b-button v-b-toggle.sidebar-1> <span class="glyphicon glyphicon-menu-burger" aria-hidden="true">Informationen</span>
     </b-button>
-    <b-sidebar id="sidebar-1" title="Sidebar" shadow>
+    <b-sidebar id="sidebar-1" title="Informationen" shadow>
       <div class="px-3 py-2">
-        <div>
-          <ul> <a href="#1">first</a> </ul>
-          <ul> <a href="#2">second</a> </ul>
-          <ul> <a href="#3">third</a> </ul>
-          <ul> <a href="#4">fourth</a> </ul>
-        </div>
+        <b-img class="image"  src="../assets/foto.jpg" fluid thumbnail></b-img>
+        <h2>Line Follower</h2>
         <p>
-          Cras hallo mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-          in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-        </p>
-        <b-img src="https://picsum.photos/500/500/?image=54" fluid thumbnail></b-img>
+          Unser ferngesteuertes Kameraauto, ist mit Infrarotsensoren ausgestattet, die zwischen weiß und schwarz unterscheiden können. So kann dem Line Follower eine bestimmte Route durch Linien vorgegeben werden.
+          </p>
+          <br/>
+          <h5>Aufbau</h5>
+          <p>
+            Für unser Projekt benötigten wir neben vier Rädern mit Gleichstrommotoren auch zwei Plexiglasplatten, die unsere Installation tragen. 
+            Für die Installation und die Umsetzung der Technik verwendeten wir einen Arduino für die Steuerung und eine H-Brücke für die Verbindung zu den Motoren.
+            Um alles auf einem Interface steuerbar zu machen, benötigten wir einen Raspberry Pi, der zudem mit einer Kamera ausgestattet ist, 
+            der die übermittelten Daten vom Backend des Frontends abholt und an den Arduino übermittelt.
+          </p>
+
+          <br/>
+          <h5>Entwicklung</h5>
+          <p>
+            Bevor wir das Auto zusammengebaut haben, schauten wir zuerst nach dem Antrieb der Motoren. Anschließend verlöteten und verbauten wir die Motoren an die Räder und bauten alle Autoteile zusammen.
+            Jetzt entwickelten wir Code, um das Auto ohne Sensor anzusteuern. Danach versuchten wir zunächst die Sensordaten des Infrarotsensors auszulesen. Hier änderten wir den Code mithilfe einer while-Schleife, sodass wir nur noch 1 oder 0 als Wert bekommen haben. So ist 0 der Wert für weiß und 1 für schwarz. 
+            Auf dieser Grundlage erstellten wir den Code, der Sensor und Auto zusammen brachten.
+          </p>
+        <br/>
       </div>
     </b-sidebar>
     <div>
       <div id="controlscontainer">
         <strong>Connected: {{connected}}</strong><br><br><br>
         <div class="half">
-          <h4>Presets</h4>
-          <button v-on:click="go()" :disabled="!connected || !amIActive">GO</button>
-          <button v-on:click="stop()" :disabled="!connected || !amIActive">STOP</button><br>
+          <button v-on:click="go()" :disabled="!connected || !$store.getters.amIActive">GO</button>
+          <button v-on:click="stop()" :disabled="!connected || !$store.getters.amIActive">STOP</button><br>
           <!-- <b-button class="buttonLineNavi" v-on:click = "go ('send message', $event)" >start</b-button> -->
           <!-- <b-button class="buttonLineNavi" v-on:click = "stop ('send message', $event)">stop</b-button> -->
         </div>
-        <div class="half">
+        <!-- <div class="half">
           <h4>Current Waiting Queue {{this.currentTimer}}</h4>
           <SimpleQueue :currentQueue="currentQueue" :ownId="ownId" :ownName="clientName"></SimpleQueue>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -40,12 +50,11 @@
 </template>
 
 <script>
-  import SimpleQueue from "./SimpleQueueComponent";
-  //import Layout from './submodules/base_layout/src/components/interface.vue';
+  // import SimpleQueue from "./SimpleQueueComponent";
 
     export default {
         components: {
-            SimpleQueue
+            // SimpleQueue
         },
         methods: {
             //CHANGEME: die Namen der Nachrichten die ihr mit emit() verschickt müssen mit dem Backend matchen
@@ -75,34 +84,15 @@
             nsp_list: function (data) {
                 console.log("NSPs:" + data);
             },
-            update_queue: function (data) {
-                this.currentQueue = data;
-            },
-            queue_ping: function() {
-                this.$socket.emit("queue_pong")
-            },
-            update_timer:function(data) {
-                this.currentTimer = data;
-            },
-            client_name: function(data) {
-                this.clientName = data;
-            }
+            
         },
         data: function () {
             return {
                 connected: false,
-                currentQueue: [],
-                ownId: "undefined",
-                clientName: "undefined",
-                currentTimer: 0,
+                
             }
         },
-        computed: {
-            amIActive: function() {
-                if(this.currentQueue.length == 0) return false;
-                return this.currentQueue[1][0].id === this.ownId;
-            }
-        }
+        
     }
 </script>
 
@@ -119,5 +109,24 @@
 
   .buttonLineNavi {
     margin: 2em;
+  }
+
+  p{
+    display: flex;
+    text-align: left;
+  }
+
+  .headline{
+    font-weight: bold;
+  }
+
+  .image{
+    border-radius: 15px;
+  }
+
+  .camerastream {
+    width: 500 vw;
+    height: 2000 vh;
+    border-style: solid;
   }
 </style>

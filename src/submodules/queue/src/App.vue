@@ -1,8 +1,10 @@
+import queue from './components/queue.vue'
+
 <template>
   <div>
   <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
+    title="Cam 1"
+    img-src="https://i.ytimg.com/vi/oZB9PNdgMeM/maxresdefault.jpg"
     img-alt="Image"
     img-top
     tag="article"
@@ -10,22 +12,28 @@
     class="mb-2"
   >
     <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
+     Nickname des Steuernden
     </b-card-text>
 
-    <b-button href="#" variant="primary">Go somewhere</b-button>
+ <b-list-group flush>
+      <b-list-group-item>Nickname</b-list-group-item>
+      <b-list-group-item>Nickname</b-list-group-item>
+      <b-list-group-item>Nickname</b-list-group-item>
+
+    </b-list-group>
+
+    <b-button href="#" variant="primary">Get in Line</b-button>
   </b-card>
+  
 </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+ 
 }
 </script>
 
