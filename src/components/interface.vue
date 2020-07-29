@@ -1,4 +1,5 @@
 <template>
+<Layout>
   <div>
     <b-button v-b-toggle.sidebar-1> <span class="glyphicon glyphicon-menu-burger" aria-hidden="true">menu</span>
     </b-button>
@@ -34,12 +35,13 @@
       </div>
     </div>
   </div>
-
+</Layout>
 
 </template>
 
 <script>
-  import SimpleQueue from "./SimpleQueueComponent"
+  import SimpleQueue from "./SimpleQueueComponent";
+  import Layout from './submodules/base_layout/src/components/interface.vue';
 
     export default {
         components: {
