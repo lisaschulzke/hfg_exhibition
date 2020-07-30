@@ -4,3 +4,9 @@
 [submodule "src/submodules/src/submodules/queue"]
 	path = src/submodules/src/submodules/queue
 	url = https://github.com/tomschmosby/queue
+[submodule "src/src/submodules/base_layout"]
+	path = src/src/submodules/base_layout
+	url = https://github.com/craftycram/rc-interface-component
+[submodule "src/src/submodules/queue"]
+	path = src/src/submodules/queue
+	url = https://github.com/tomschmosby/queue
