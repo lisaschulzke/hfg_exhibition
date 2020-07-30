@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Layout streamUrl="http://192.168.178.42:8080/stream.mjpg">
+    <Layout streamUrl="http://hal.hfg.design:50005/live-21080.mjpg">
 
       <template v-slot:videocomponent>
         <!-- component... -->

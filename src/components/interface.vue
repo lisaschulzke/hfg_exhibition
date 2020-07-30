@@ -21,7 +21,7 @@
           <b-img class="image" src="../assets/foto.jpg" fluid thumbnail></b-img>
           <h2>Line Follower</h2>
           <p>
-            Unser ferngesteuertes Kameraauto, ist mit Infrarotsensoren ausgestattet, die zwischen weiß und schwarz
+            Unser ferngesteuertes Kameraauto ist mit Infrarotsensoren ausgestattet, die zwischen weiß und schwarz
             unterscheiden können. So kann dem Line Follower eine bestimmte Route durch Linien vorgegeben werden.
           </p>
           <br />
