@@ -2,16 +2,10 @@
   <div id="app">
     <Layout streamUrl="http://hal.hfg.design:50005/live-21080.mjpg">
 
-      <template v-slot:videocomponent>
-        <!-- component... -->
-        <h1>TOP</h1>
-      </template>
-
+      <template v-slot:videocomponent></template>
       <template v-slot:controlcomponent>
-        <!-- <h1>BOTTOM_LEFT</h1> -->
         <Interface></Interface>
       </template>
-
       <template v-slot:queuecomponent>
         <SimpleQueueComponent></SimpleQueueComponent>
         <h1>BOTTOM_RIGHT</h1>
