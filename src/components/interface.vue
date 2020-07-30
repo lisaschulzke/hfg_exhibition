@@ -6,7 +6,7 @@
       <div id="controlscontainer">
         <strong>Connected: {{connected}}</strong><br>
         <div class="half">
-          <button class="buttonGo" v-on:click="go()" :disabled="!connected || !$store.getters.amIActive">GO</button>
+          <button class="buttonGo" v-on:click="go()"  || !$store.getters.amIActive >GO</button>
           <button class="buttonStop" v-on:click="stop()"
             :disabled="!connected || !$store.getters.amIActive">STOP</button><br>
         </div>
