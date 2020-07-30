@@ -8,7 +8,7 @@
       </template>
 
       <template v-slot:controlcomponent>
-        <h1>BOTTOM_LEFT</h1>
+        <!-- <h1>BOTTOM_LEFT</h1> -->
         <Interface></Interface>
       </template>
 
