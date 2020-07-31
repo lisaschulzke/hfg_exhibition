@@ -6,9 +6,10 @@
       <div id="controlscontainer">
         <strong>Connected: {{connected}}</strong><br>
         <div class="half">
-          <button class="buttonGo" v-on:click="go()" :disabled="!connected || !$store.getters.amIActive">GO</button>
-          <button class="buttonStop" v-on:click="stop()"
-            :disabled="!connected || !$store.getters.amIActive">STOP</button><br>
+          <button class="buttonGo" v-on:click="go()"  || !$store.getters.amIActive >GO</button>
+          <button class="buttonStop" v-on:click="stop()" :disabled="!connected || !$store.getters.amIActive">STOP</button><br>
+            <hr/>
+            Override Key: <input type="text" v-model="overridePW" v-on:change="authorize">
         </div>
         <!-- <div class="half">
           <h4>Current Waiting Queue {{this.currentTimer}}</h4>
@@ -90,6 +91,9 @@
       },
       stop: function () {
         this.$socket.emit('move', 'stop');
+      },
+      authorize: function() {
+        this.$socket.emit('authorize', this.overridePW);
       }
     },
     sockets: {
@@ -107,12 +111,16 @@
       nsp_list: function (data) {
         console.log("NSPs:" + data);
       },
+      authorized: function(data) {
+        this.authorized = data;
+      }
 
     },
     data: function () {
       return {
         connected: false,
-
+        overridePW: "",
+        authorized: false
       }
     },
 
