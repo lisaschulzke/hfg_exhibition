@@ -8,7 +8,7 @@
       </template>
       <template v-slot:queuecomponent>
         <SimpleQueueComponent></SimpleQueueComponent>
-        <h1>BOTTOM_RIGHT</h1>
+        <!-- <h1>BOTTOM_RIGHT</h1> -->
       </template>
 
     </Layout>
