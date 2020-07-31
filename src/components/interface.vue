@@ -91,9 +91,9 @@
       stop: function () {
         this.$socket.emit('move', 'stop');
       },
-      // authorize: function() {
-      //   this.$socket.emit('authorize', this.overridePW);
-      // }
+      authorize: function() {
+        this.$socket.emit('authorize', this.overridePW);
+      }
     },
     sockets: {
       connect: function () {
@@ -110,16 +110,16 @@
       nsp_list: function (data) {
         console.log("NSPs:" + data);
       },
-      // authorized: function(data) {
-      //   this.authorized = data;
-      // }
+      authorized: function(data) {
+        this.authorized = data;
+      }
 
     },
     data: function () {
       return {
         connected: false,
         overridePW: "",
-        // authorized: false
+        authorized: false
       }
     },
 
