@@ -119,7 +119,7 @@
     data: function () {
       return {
         connected: false,
-        overridePW: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJHPPHaLx6Nor3E+Zf1BA+Nxz1cFAP8/aKXgw/194Hp4tmmgzgJhJ2tE301+6LAop0BZtB5VVsG2uyw69gxrqDCPqWZNVBCFyP6ZhtGpYrmV/dxsN6abm5g0ehp/jr+YvDs17hx2kVIVbqFlgYzjdyNlaOm1mqmAARx3gMnEusLfpl+nvwHuQSLKbOGDrwrFC+7axxzevGfiLhP67X/UU+hL+VUHzAGoEyKhqN+WrwQKBTUwu0n0ekCjc/5kXflZC6AUbPc6vHQtk+Nx5CW9E3mspoHzgzALoKGOB1qrxnL0L3NwUfY4vvbO+ZocfpGWzgSusGzzdusUn1LgVF8EpN pi@flobot",
+        overridePW: "",
         authorized: false
       }
     },
